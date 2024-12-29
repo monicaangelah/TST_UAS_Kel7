@@ -32,9 +32,9 @@ class Forge
     protected $db;
 
     /**
-     * List of fields in the form `[name => attributes]`
+     * List of fields.
      *
-     * @var array<string, array<string, bool|string>|string>
+     * @var array<string, array|string> [name => attributes]
      */
     protected $fields = [];
 
@@ -1108,12 +1108,10 @@ class Forge
         $fk   = $this->foreignKeys;
 
         if ($this->fields === []) {
-            $fieldData = $this->db->getFieldData($this->db->DBPrefix . $table);
-
-            $this->fields = array_combine(
-                array_map(static fn ($columnName) => $columnName->name, $fieldData),
-                array_fill(0, count($fieldData), [])
-            );
+            $this->fields = array_flip(array_map(
+                static fn ($columnName) => $columnName->name,
+                $this->db->getFieldData($this->db->DBPrefix . $table)
+            ));
         }
 
         $fields = $this->fields;

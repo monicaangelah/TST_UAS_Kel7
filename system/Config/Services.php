@@ -211,7 +211,7 @@ class Services extends BaseService
 
         return new CURLRequest(
             $config,
-            new URI($options['baseURI'] ?? null),
+            new URI($options['base_uri'] ?? null),
             $response,
             $options
         );

@@ -57,7 +57,7 @@ class Connection extends BaseConnection
     /**
      * MySQLi object
      *
-     * Has to be preserved without being assigned to $connId.
+     * Has to be preserved without being assigned to $conn_id.
      *
      * @var false|mysqli
      */
@@ -297,7 +297,7 @@ class Connection extends BaseConnection
     /**
      * Executes the query against the database.
      *
-     * @return false|mysqli_result
+     * @return false|mysqli_result;
      */
     protected function execute(string $sql)
     {

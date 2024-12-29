@@ -39,7 +39,8 @@ trait ReflectionHelper
     public static function getPrivateMethodInvoker($obj, $method)
     {
         $refMethod = new ReflectionMethod($obj, $method);
-        $obj       = (gettype($obj) === 'object') ? $obj : null;
+        $refMethod->setAccessible(true);
+        $obj = (gettype($obj) === 'object') ? $obj : null;
 
         return static fn (...$args) => $refMethod->invokeArgs($obj, $args);
     }
@@ -58,7 +59,10 @@ trait ReflectionHelper
     {
         $refClass = is_object($obj) ? new ReflectionObject($obj) : new ReflectionClass($obj);
 
-        return $refClass->getProperty($property);
+        $refProperty = $refClass->getProperty($property);
+        $refProperty->setAccessible(true);
+
+        return $refProperty;
     }
 
     /**
