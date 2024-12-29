@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/style.css">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Dashboard Admin</h1>
+        <h1 class="text-center">Dashboard Admin</h1>
         <p>Selamat Datang, <?= esc($username) ?>!</p>
 
         <div class="mt-4">
