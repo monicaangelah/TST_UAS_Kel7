@@ -16,13 +16,20 @@ $routes->get('/logout', 'Auth::logout');
 
 // Routes untuk Mahasiswa
 $routes->group('mahasiswa', function ($routes) {
-    $routes->post('ip-generator', 'Pendaftaran\IPController::generate');
+    $routes->post('ip-generator/hitung', 'Mahasiswa\IPController::generateIP');
+    $routes->get('ip-generator', 'Mahasiswa\IPController::generatorView');
+    $routes->post('ip-generator/generate', 'Mahasiswa\IPController::generateIP');
     $routes->get('grafik-ip/(:num)', 'Mahasiswa\ProfilController::getGrafikIP/$1');
     $routes->get('profil/(:num)', 'Mahasiswa\ProfilController::index/$1');
     $routes->get('mata-kuliah', 'Mahasiswa\PendaftaranController::index');
     $routes->post('mata-kuliah/pilih', 'Mahasiswa\PendaftaranController::pilih');
     $routes->post('mata-kuliah/batal', 'Mahasiswa\PendaftaranController::batal');
     $routes->get('jadwal-kuliah/(:num)', 'Mahasiswa\JadwalController::jadwalKuliah/$1');
+});
+
+$routes->group('mahasiswa', function ($routes) {
+    $routes->get('ip-generator', 'Mahasiswa\IPController::generatorView');
+    $routes->post('ip-generator/generate', 'Mahasiswa\IPController::generateIP');
 });
 
 // Routes untuk Teacher
