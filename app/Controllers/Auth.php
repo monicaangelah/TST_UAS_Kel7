@@ -75,7 +75,10 @@ class Auth extends Controller
 
     public function logout()
     {
+        // Hapus session
         session()->destroy();
+
+        // Redirect ke halaman login
         return redirect()->to('/login');
     }
 }
