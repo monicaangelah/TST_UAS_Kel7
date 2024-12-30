@@ -10,7 +10,8 @@
     <div class="container mt-5">
         <h2>Hasil IP Generator</h2>
         <p>IP Perkiraan Semester Ini: <strong><?= number_format($ip, 2) ?></strong></p>
-        <a href="/mahasiswa/ip-generator" class="btn btn-secondary">Kembali</a>
+        <a href="/mahasiswa/ip-generator" class="btn btn-primary">Kembali</a>
     </div>
+    
 </body>
 </html>

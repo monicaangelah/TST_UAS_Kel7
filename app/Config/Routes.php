@@ -25,9 +25,6 @@ $routes->group('mahasiswa', function ($routes) {
     $routes->post('mata-kuliah/pilih', 'Mahasiswa\PendaftaranController::pilih');
     $routes->post('mata-kuliah/batal', 'Mahasiswa\PendaftaranController::batal');
     $routes->get('jadwal-kuliah/(:num)', 'Mahasiswa\JadwalController::jadwalKuliah/$1');
-});
-
-$routes->group('mahasiswa', function ($routes) {
     $routes->get('ip-generator', 'Mahasiswa\IPController::generatorView');
     $routes->post('ip-generator/generate', 'Mahasiswa\IPController::generateIP');
 });
