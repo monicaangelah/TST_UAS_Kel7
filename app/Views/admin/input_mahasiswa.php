@@ -28,7 +28,10 @@
                         <td><?= esc($student['nim']) ?></td>
                         <td><?= esc($student['semester']) ?></td>
                         <td>
-                            <a href="/admin/hapus-mahasiswa/<?= $student['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                            <form method="POST" action="delete-mahasiswa/<?= $student['no']; ?>">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

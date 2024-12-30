@@ -26,11 +26,16 @@ class AdminController extends BaseController
             'semester' => $this->request->getPost('semester'),
         ];
 
-        if ($studentsModel->insert($data)) {
-            return redirect()->back()->with('success', 'Data mahasiswa berhasil disimpan.');
-        } else {
-            return redirect()->back()->with('error', 'Gagal menyimpan data mahasiswa.');
-        }
+        $studentsModel->insert($data);
+        return redirect()->to('admin/input-mahasiswa');
+    }
+
+    public function deleteMahasiswa($no)
+    {
+        $studentsModel = new StudentsModel();
+        $studentsModel->delete($no);
+
+        return redirect()->to('admin/input-mahasiswa');
     }
 
     public function inputDosenView()
@@ -51,10 +56,18 @@ class AdminController extends BaseController
         ];
 
         if ($teacherModel->insert($data)) {
-            return redirect()->back()->with('success', 'Data dosen berhasil disimpan.');
+            return redirect()->to('admin/input-dosen')->with('success', 'Data dosen berhasil disimpan.');
         } else {
-            return redirect()->back()->with('error', 'Gagal menyimpan data dosen.');
+            return redirect()->to('admin/input-dosen')->with('error', 'Gagal menyimpan data dosen.');
         }
+        
+    }
 
+    public function deleteDosen($no)
+    {
+        $teachersModel = new TeachersModel();
+        $teachersModel->delete($no);
+
+        return redirect()->to('admin/input-dosen');
     }
 }

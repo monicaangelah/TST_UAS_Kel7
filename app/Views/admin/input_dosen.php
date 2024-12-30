@@ -24,7 +24,10 @@
                         <td><?= esc($teacher['id']) ?></td>
                         <td><?= esc($teacher['nama']) ?></td>
                         <td>
-                            <a href="/admin/hapus-dosen/<?= $teacher['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                            <form method="POST" action="delete-dosen/<?= $teacher['no']; ?>">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

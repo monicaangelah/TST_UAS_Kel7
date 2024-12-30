@@ -47,8 +47,8 @@ $routes->group('admin', function ($routes) {
     $routes->get('input-dosen', 'AdminController::inputDosenView');
     $routes->post('simpan-mahasiswa', 'AdminController::simpanMahasiswa');
     $routes->post('simpan-dosen', 'AdminController::simpanDosen');
-    $routes->get('hapus-mahasiswa/(:num)', 'AdminController::hapusMahasiswa/$1');
-    $routes->get('hapus-dosen/(:num)', 'AdminController::hapusDosen/$1');    
+    $routes->delete('delete-mahasiswa/(:num)', 'AdminController::deleteMahasiswa/$1');
+    $routes->delete('delete-dosen/(:num)', 'AdminController::deleteDosen/$1');    
 });
 
 $routes->get('/dashboard/mahasiswa', 'Dashboard::mahasiswa');
