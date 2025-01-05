@@ -16,9 +16,6 @@ $routes->get('/logout', 'Auth::logout');
 
 // Routes untuk Mahasiswa
 $routes->group('mahasiswa', function ($routes) {
-    $routes->post('ip-generator/hitung', 'Mahasiswa\IPController::generateIP');
-    $routes->get('ip-generator', 'Mahasiswa\IPController::generatorView');
-    $routes->post('ip-generator/generate', 'Mahasiswa\IPController::generateIP');
     $routes->get('grafik-ip/(:num)', 'Mahasiswa\ProfilController::getGrafikIP/$1');
     $routes->get('profil/(:num)', 'Mahasiswa\ProfilController::index/$1');
     $routes->get('mata-kuliah', 'Mahasiswa\PendaftaranController::index');
