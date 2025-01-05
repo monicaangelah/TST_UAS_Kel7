@@ -10,6 +10,7 @@ class EditCourseController extends Controller
     public function index()
     {
         $model = new CoursesModel();
+        
         $data['courses'] = $model->findAll();
 
         return view('courses/index', $data);
@@ -32,7 +33,7 @@ class EditCourseController extends Controller
 
         $model->save($data);
 
-        return redirect()->to('/courses');
+        return redirect()->to('/admin/courses');
     }
 
     public function delete($id)
@@ -40,6 +41,6 @@ class EditCourseController extends Controller
         $model = new CoursesModel();
         $model->delete($id);
 
-        return redirect()->to('/courses');
+        return redirect()->to('/admin/courses');
     }
 }
