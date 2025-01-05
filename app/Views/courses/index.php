@@ -29,7 +29,7 @@
                         <td><?= $course['start_time']; ?></td>
                         <td><?= $course['duration']; ?></td>
                         <td>
-                            <form method="POST" action="/courses/<?= $course['id']; ?>">
+                            <form method="POST" action="/admin/courses/<?= $course['id']; ?>">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                             </form>
@@ -40,7 +40,7 @@
         </table>
 
         <h3>Tambah Mata Kuliah</h3>
-        <form method="POST" action="/courses">
+        <form method="POST" action="/admin/courses">
             <div class="form-group">
                 <label for="course_name">Nama Mata Kuliah</label>
                 <input type="text" name="course_name" id="course_name" class="form-control" required>

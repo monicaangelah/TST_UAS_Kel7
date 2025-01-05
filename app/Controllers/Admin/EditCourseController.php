@@ -32,7 +32,7 @@ class EditCourseController extends Controller
 
         $model->save($data);
 
-        return redirect()->to('/courses');
+        return redirect()->to('/admin/courses')->with('success', 'Mata kuliah berhasil disimpan.');
     }
 
     public function delete($id)
@@ -40,6 +40,6 @@ class EditCourseController extends Controller
         $model = new CoursesModel();
         $model->delete($id);
 
-        return redirect()->to('/courses');
+        return redirect()->to('/admin/courses')->with('success', 'Mata kuliah berhasil dihapus.');
     }
 }
