@@ -17,7 +17,6 @@ class JadwalController extends BaseController
             ->select('courses.course_name, courses.day, courses.start_time, courses.duration')
             ->findAll();
 
-        // Kirim data ke view
-        return view('jadwal_kuliah', ['jadwal' => $jadwal]);
+        return view('mahasiswa/jadwal_kuliah', ['jadwal' => $jadwal]);
     }
 }

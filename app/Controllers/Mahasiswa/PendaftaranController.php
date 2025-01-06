@@ -13,7 +13,7 @@ class PendaftaranController extends BaseController
         $coursesModel = new CoursesModel();
         $courses = $coursesModel->findAll(); // Ambil semua data mata kuliah
 
-        return view('pendaftaran_mata_kuliah', ['courses' => $courses]);
+        return view('mahasiswa/pendaftaran_mata_kuliah', ['courses' => $courses]);
     }
 
     public function pilih()
@@ -43,7 +43,6 @@ class PendaftaranController extends BaseController
             return redirect()->back()->with('error', 'Mata kuliah sudah dipilih');
         }
 
-        // Simpan data
         $data = [
             'student_id' => $studentId,
             'course_id' => $courseId,
@@ -73,7 +72,6 @@ class PendaftaranController extends BaseController
             return redirect()->back()->with('error', 'Data tidak valid');
         }
 
-        // Hapus data
         $studentsCoursesModel->where('student_id', $studentId)
             ->where('course_id', $courseId)
             ->delete();

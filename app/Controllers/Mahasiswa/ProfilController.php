@@ -56,7 +56,7 @@ class ProfilController extends BaseController
             'mataKuliah' => $mataKuliah
         ];
 
-        return view('/profil', $data);
+        return view('mahasiswa/profil', $data);
     }
 
        // Fungsi tambahan untuk menghitung IPK

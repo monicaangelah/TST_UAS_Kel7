@@ -16,7 +16,6 @@ $routes->get('/logout', 'Auth::logout');
 
 // Routes untuk Mahasiswa
 $routes->group('mahasiswa', function ($routes) {
-    $routes->get('grafik-ip/(:num)', 'Mahasiswa\ProfilController::getGrafikIP/$1');
     $routes->get('profil/(:num)', 'Mahasiswa\ProfilController::index/$1');
     $routes->get('mata-kuliah', 'Mahasiswa\PendaftaranController::index');
     $routes->post('mata-kuliah/pilih', 'Mahasiswa\PendaftaranController::pilih');
@@ -34,9 +33,9 @@ $routes->group('teacher', function ($routes) {
 
 // Routes untuk Admin
 $routes->group('admin', function ($routes) {
-    $routes->get('courses', 'Admin\EditCourseController::index'); // View list of courses
-    $routes->post('courses', 'Admin\EditCourseController::create'); // Add a course
-    $routes->delete('courses/(:num)', 'Admin\EditCourseController::delete/$1'); // Delete a course
+    $routes->get('courses', 'Admin\EditCourseController::index');
+    $routes->post('courses', 'Admin\EditCourseController::create'); 
+    $routes->delete('courses/(:num)', 'Admin\EditCourseController::delete/$1'); 
     $routes->get('input-mahasiswa', 'AdminController::inputMahasiswaView');
     $routes->get('input-dosen', 'AdminController::inputDosenView');
     $routes->post('simpan-mahasiswa', 'AdminController::simpanMahasiswa');
