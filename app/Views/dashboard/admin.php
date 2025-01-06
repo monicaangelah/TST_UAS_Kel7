@@ -16,7 +16,7 @@
         <div class="mt-4">
             <h3>Menu</h3>
             <div class="list-group">
-                <a href="/admin/courses" class="list-group-item list-group-item-action">Daftar Mata Kuliah</a>
+                <a href="/admin/courses" class="list-group-item list-group-item-action">Input Daftar Mata Kuliah</a>
                 <a href="/admin/input-mahasiswa" class="list-group-item list-group-item-action">Input Data Mahasiswa</a>
                 <a href="/admin/input-dosen" class="list-group-item list-group-item-action">Input Data Dosen</a>
             </div>  
