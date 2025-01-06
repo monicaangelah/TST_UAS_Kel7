@@ -17,6 +17,7 @@
                     <th>Jam Mulai</th>
                     <th>Durasi (Menit)</th>
                     <th>SKS</th>
+                    <th>Semester</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <tr>
                         <td><?= $course['course_name']; ?></td>
                         <td><?= $course['credits']; ?></td>
+                        <td><?= $course['semester']; ?></td>
                         <td><?= $course['day']; ?></td>
                         <td><?= $course['start_time']; ?></td>
                         <td><?= $course['duration']; ?></td>
@@ -49,7 +51,10 @@
                 <label for="credits">SKS</label>
                 <input type="number" name="credits" id="credits" class="form-control" required>
             </div>
-            
+            <div class="form-group">
+                <label for="credits">Semester</label>
+                <input type="number" name="semester" id="semester" class="form-control" required>
+            </div>
             <div class="form-group">
                 <label for="day">Hari</label>
                 <select name="day" id="day" class="form-control" required>

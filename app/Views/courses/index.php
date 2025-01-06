@@ -17,6 +17,7 @@
                     <th>Jam Mulai</th>
                     <th>Durasi (Menit)</th>
                     <th>SKS</th>
+                    <th>Semester</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -24,10 +25,11 @@
                 <?php foreach ($courses as $course): ?>
                     <tr>
                         <td><?= $course['course_name']; ?></td>
-                        <td><?= $course['credits']; ?></td>
                         <td><?= $course['day']; ?></td>
                         <td><?= $course['start_time']; ?></td>
                         <td><?= $course['duration']; ?></td>
+                        <td><?= $course['credits']; ?></td>
+                        <td><?= $course['semester']; ?></td>
                         <td>
                             <form method="POST" action="/admin/courses/<?= $course['id']; ?>">
                                 <input type="hidden" name="_method" value="DELETE">
@@ -48,6 +50,10 @@
             <div class="form-group">
                 <label for="credits">SKS</label>
                 <input type="number" name="credits" id="credits" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="semester">Semester</label>
+                <input type="number" name="semester" id="semester" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="day">Hari</label>

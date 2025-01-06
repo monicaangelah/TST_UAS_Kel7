@@ -26,6 +26,7 @@ class EditCourseController extends Controller
         $data = [
             'course_name' => $this->request->getPost('course_name'),
             'credits' => $credits,
+            'semester' => $this->request->getPost('semester'),
             'day' => $this->request->getPost('day'),
             'start_time' => $this->request->getPost('start_time'),
             'duration' => $duration,
@@ -33,7 +34,7 @@ class EditCourseController extends Controller
 
         $model->save($data);
 
-        return redirect()->to('/courses');
+        return redirect()->to('/admin/courses');
     }
 
     public function delete($id)
@@ -41,6 +42,6 @@ class EditCourseController extends Controller
         $model = new CoursesModel();
         $model->delete($id);
 
-        return redirect()->to('/courses');
+        return redirect()->to('/admin/courses');
     }
 }
