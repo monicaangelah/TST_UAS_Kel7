@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h2>IP Generator</h2>
-        <form method="POST" action="/mahasiswa/ip-generator/hitung">
+        <form method="POST" action="/mahasiswa/ip-generator/generate">
     <table class="table">
         <thead>
             <tr>
