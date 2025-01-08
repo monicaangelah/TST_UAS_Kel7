@@ -1,109 +1,36 @@
-# CodeIgniter 4 Development
+<h1 align="center"> Tugas 3 - Integrasi Layanan (II3160 Teknologi Sistem Terintegrasi) </h1>
 
-[![PHPUnit](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpunit.yml/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpunit.yml)
-[![PHPStan](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpstan.yml/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpstan.yml)
-[![Psalm](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-psalm.yml/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-psalm.yml)
-[![Coverage Status](https://coveralls.io/repos/github/codeigniter4/CodeIgniter4/badge.svg?branch=develop)](https://coveralls.io/github/codeigniter4/CodeIgniter4?branch=develop)
-[![Downloads](https://poser.pugx.org/codeigniter4/framework/downloads)](https://packagist.org/packages/codeigniter4/framework)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/codeigniter4/CodeIgniter4)](https://packagist.org/packages/codeigniter4/framework)
-[![GitHub stars](https://img.shields.io/github/stars/codeigniter4/CodeIgniter4)](https://packagist.org/packages/codeigniter4/framework)
-[![GitHub license](https://img.shields.io/github/license/codeigniter4/CodeIgniter4)](https://github.com/codeigniter4/CodeIgniter4/blob/develop/LICENSE)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/codeigniter4/CodeIgniter4/pulls)
-<br>
+## Table of Contents
+* [General Information](#general-information)
+* [How to Run](#how-to-run)
+* [Contributors](#contributors)
 
-## What is CodeIgniter?
+## General Information
+Tugas UAS 3 II3160 Teknologi Sistem Terintegrasi bertujuan untuk memberikan pengalaman dalam mengimplementasikan sebuah layanan inti, termasuk API endpoint dan authentication/authorization untuk mengakses API endpoint tersebut. Layanan yang kami buat adalah layanan terkait Learning Management System (LMS) bernama StudentHub yang terdiri dari beberapa fitur, yaitu:
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+1. Dashboard Mahasiswa: Halaman utama yang muncul saat pertama kali mahasiswa mengakses website, menampilkan sambutan selamat datang, Nomor Induk Mahasiswa (NIM), informasi mengenai semester yang sedang dijalani oleh mahasiswa, serta fitur-fitur apa saja yang bisa diakses oleh mahasiswa.
+2. Dashboard Dosen: Halaman utama yang muncul saat pertama kali dosen mengakses website, menampilkan sambutan selamat datang untuk dosen dan fitur-fitur apa saja yang bisa diakses oleh dosen.
+3. Dashboard Admin: Halaman utama yang muncul saat pertama kali admin mengakses website, menampilkan sambutan selamat datang untuk admin dan fitur-fitur apa saja yang bisa diakses oleh admin.
+4. Data Pribadi: Fitur untuk mahasiswa, yaitu menampilkan Nama, Nomor Induk Mahasiswa (NIM), semester yang sedang berlangsung, Indeks Prestasi Kumulatif (IPK) mahasiswa saat ini, mata kuliah yang sedang diambil pada semester yang sedang berlangsung, dan grafik perkembangan Indeks Prestasi (IP) mahasiswa hingga semester yang sedang berjalan. 
+5. Pendaftaran Mata Kuliah:  Fitur untuk mahasiswa, yaitu mendaftarkan mata kuliah yang akan diambil pada semester yang sedang berlangsung.
+6. IP Generator: Fitur untuk mahasiswa, yaitu memperkirakan Indeks Prestasi (IP) yang akan diperoleh oleh pengguna pada semester yang sedang dijalani.
+7. Jadwal Kuliah: Fitur untuk mahasiswa, yaitu menampilkan jadwal kuliah pada semester yang sedang berlangsung.
+8. Input Daftar Mata Kuliah: Fitur untuk admin, yaitu menambah atau menghapus mata kuliah dari daftar yang ada.
+9. Input Data Mahasiswa: Fitur untuk admin, yaitu menambah atau menghapus data mahasiswa.
+10. Input Data Dosen: Fitur untuk admin, yaitu menambah atau menghapus data dosen.
+11. Input Nilai: Fitur untuk dosen, yaitu menginput Indeks Prestasi (IP) mahasiswa pada semester yang sedang berlangsung.
 
-This repository holds the source code for CodeIgniter 4 only.
-Version 4 is a complete rewrite to bring the quality and the code into a more modern version,
-while still keeping as many of the things intact that has made people love the framework over the years.
+## How to Run
+1. Open this URL
+```
+aaaaaaaa
+```
+2. Sign up if you don't have an account yet, then log in to your account.
+3. Log in directly if you want to try using the existing data (username: Monica, password: Monica / username: Kayla, password: Kayla / username: admin, password: admin / username: teacher, password: teacher).
+4. You have successfully accessed the features available on StudentHub.
+5. Welcome to the StudentHub Learning Management System. We hope it provides you with an enjoyable experience!
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
-
-### Documentation
-
-The [User Guide](https://codeigniter.com/user_guide/) is the primary documentation for CodeIgniter 4.
-
-You will also find the [current **in-progress** User Guide](https://codeigniter4.github.io/CodeIgniter4/).
-As with the rest of the framework, it is a work in progress, and will see changes over time to structure, explanations, etc.
-
-You might also be interested in the [API documentation](https://codeigniter4.github.io/api/) for the framework components.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-CodeIgniter is developed completely on a volunteer basis. As such, please give up to 7 days
-for your issues to be reviewed. If you haven't heard from one of the team in that time period,
-feel free to leave a comment on the issue so that it gets brought back to our attention.
-
-> [!IMPORTANT]
-> We use GitHub issues to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-> We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-> FEATURE REQUESTS.
-
-If you raise an issue here that pertains to support or a feature request, it will
-be closed! If you are not sure if you have found a bug, raise a thread on the forum first -
-someone else may have encountered the same thing.
-
-Before raising a new GitHub issue, please check that your bug hasn't already
-been reported or fixed.
-
-We use pull requests (PRs) for CONTRIBUTIONS to the repository.
-We are looking for contributions that address one of the reported bugs or
-approved work packages.
-
-Do not use a PR as a form of feature request.
-Unsolicited contributions will only be considered if they fit nicely
-into the framework roadmap.
-Remember that some components that were part of CodeIgniter 3 are being moved
-to optional packages, with their own repository.
-
-## Contributing
-
-We **are** accepting contributions from the community! It doesn't matter whether you can code, write documentation, or help find bugs,
-all contributions are welcome.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/README.md).
-
-CodeIgniter has had thousands on contributions from people since its creation. This project would not be what it is without them.
-
-<a href="https://github.com/codeigniter4/CodeIgniter4/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=codeigniter4/CodeIgniter4" />
-</a>
-
-Made with [contrib.rocks](https://contrib.rocks).
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-## Running CodeIgniter Tests
-
-Information on running the CodeIgniter test suite can be found in the [README.md](tests/README.md) file in the tests directory.
+## Contributors
+### Kelompok 7 - Final Project
+- Kayla Dyara (18222074)
+- Monica Angela Hartono (18222078)
