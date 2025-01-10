@@ -23,7 +23,7 @@ Tugas UAS 3 II3160 Teknologi Sistem Terintegrasi bertujuan untuk memberikan peng
 ## How to Run
 1. Open this URL
 ```
-aaaaaaaa
+http://studenthub.zya.me/Studenthub/public/
 ```
 2. Sign up if you don't have an account yet, then log in to your account.
 3. Log in directly if you want to try using the existing data (username: Monica, password: Monica / username: Kayla, password: Kayla / username: admin, password: admin / username: teacher, password: teacher).
